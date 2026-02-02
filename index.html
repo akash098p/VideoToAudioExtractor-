@@ -408,6 +408,20 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+                .footer {
+            grid-column: 1 / -1;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 25px 40px;
+            text-align: center;
+        }
+        .footer-content p {
+            margin: 0; color: #6c757d; font-weight: 500;
+        }
+        .footer-content p:first-child {
+            font-size: 1em; margin-bottom: 5px; color: #2c3e50;
+        }
     </style>
 </head>
 <body>
@@ -492,6 +506,13 @@
             </div>
         </div>
     </div>
+            <!-- ADD FOOTER HERE -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Video Audio Trimmer. Made by <strong>akash</strong> with ❤️</p>
+                <p style="font-size: 0.85em; opacity: 0.7;">100% Client-side • No data collected</p>
+            </div>
+        </footer>
 
     <script>
         // Global variables
@@ -961,6 +982,9 @@
         
         // Initialize on load
         window.addEventListener('load', init);
+
+                // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
